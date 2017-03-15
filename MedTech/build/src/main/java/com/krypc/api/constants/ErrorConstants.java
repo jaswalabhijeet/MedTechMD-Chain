@@ -1,0 +1,26 @@
+package com.krypc.api.constants;
+
+public interface ErrorConstants {
+	
+	public enum ERROR_CODES{
+		GENERAL_EXCEPTION(25001,"GENERAL_EXCEPTION"),
+		MANDATORY_FIELDS_MISSING(25015,"Mandatory fields are missing"),
+		ILLEGAL_ARGUMENT(25998,"ILLEGAL_ARGUMENT"),
+		CHAINCODE_NOT_DEPLOYED(25988,"CHAINCODE_NOT_DEPLOYED"),
+		INVALID_PAYMENT_STATUS_PARAMETER(25998,"INVALID_PAYMENT_STATUS_PARAMETER"),
+		INVALID_RECORD_ACCESS_PARAMETER(25997,"INVALID_RECORD_ACCESS_PARAMETER"),
+		NO_RECORDS_FOUND_FOR_PROVIDED_PARAMETERS(25997,"NO_RECORDS_FOUND_FOR_PROVIDED_PARAMETERS"),
+		RECORD_HASH_NOT_AVAILABLE(25991,"RECORD_HASH_NOT_AVAILABLE"),
+		INTERNAL_ERROR(25999,"INTERNAL_ERROR"),	
+		DUPLICATE_HASH(25994,"DUPLICATE_HASH");
+		
+		long errorCode;
+		String errorTxt;
+		ERROR_CODES(long errorCode,String errorTxt){
+			this.errorCode = errorCode;
+			this.errorTxt = errorTxt;
+		}
+		public long getErrorCode(){return errorCode;};
+		public String getErrorTxt(){return errorTxt;};
+	}
+}
